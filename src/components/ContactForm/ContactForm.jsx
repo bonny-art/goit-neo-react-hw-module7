@@ -8,7 +8,6 @@ import styles from "./ContactForm.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { hasContact } from "../../utils/hasContact";
 import toast from "react-hot-toast";
-import { nanoid } from "nanoid";
 import { selectContacts } from "../../redux/contacts/contactsSlice";
 import { addContactThunk } from "../../redux/contacts/contactsOps";
 
@@ -41,7 +40,6 @@ const ContactForm = () => {
 
     const newContact = {
       ...values,
-      id: nanoid(),
     };
 
     dispatch(addContactThunk(newContact));
