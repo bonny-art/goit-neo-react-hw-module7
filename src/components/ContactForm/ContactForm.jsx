@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { hasContact } from "../../utils/hasContact";
 import toast from "react-hot-toast";
 import { nanoid } from "nanoid";
-import { addContact } from "../../redux/contactsSlice";
+import { addContact } from "../../redux/contacts/contactsSlice";
 
 const SignupSchema = Yup.object().shape({
   name: Yup.string()
