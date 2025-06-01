@@ -5,11 +5,19 @@ import Container from "./components/Container/Container";
 import Section from "./components/Section/Section";
 import SearchBox from "./components/SearchBox/SearchBox";
 import ContactForm from "./components/ContactForm/ContactForm";
+import { fetchContactsThunk } from "./redux/contacts/contactsOps.js";
 
-import "./App.module.css";
 import style from "./App.module.css";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchContactsThunk());
+  }, [dispatch]);
+
   return (
     <>
       <Section>

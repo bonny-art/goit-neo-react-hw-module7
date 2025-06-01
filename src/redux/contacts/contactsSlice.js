@@ -5,6 +5,10 @@ import {
   fetchContactsThunk,
 } from "./contactsOps";
 
+export const selectContacts = (state) => state.contacts.items;
+export const selectLoading = (state) => state.contacts.loading;
+export const selectError = (state) => state.contacts.error;
+
 const initialState = {
   items: [],
   loading: false,
@@ -20,10 +24,10 @@ const contactsSlice = createSlice({
         state.items = payload;
       })
       .addCase(addContactThunk.fulfilled, (state, { payload }) => {
-        state.items.unshift(payload);
+        state.items.push(payload);
       })
       .addCase(deleteContactThunk.fulfilled, (state, { payload }) => {
-        state.items.filter(({ id }) => id !== payload);
+        state.items = state.items.filter(({ id }) => id !== payload.id);
       })
       .addMatcher(
         ({ type }) => type.endsWith("/pending"),
@@ -50,4 +54,3 @@ const contactsSlice = createSlice({
 });
 
 export const contactsReducer = contactsSlice.reducer;
-export const { addContact, deleteContact } = contactsSlice.actions;

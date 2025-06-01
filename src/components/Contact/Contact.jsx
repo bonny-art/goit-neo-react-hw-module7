@@ -5,13 +5,13 @@ import Button from "../Button/Button";
 
 import styles from "./Contact.module.css";
 import { useDispatch } from "react-redux";
-import { deleteContact } from "../../redux/contacts/contactsSlice";
+import { deleteContactThunk } from "../../redux/contacts/contactsOps";
 
 const Contact = ({ data }) => {
   const dispatch = useDispatch();
 
   const handleDelete = (id) => () => {
-    dispatch(deleteContact(id));
+    dispatch(deleteContactThunk(id));
   };
 
   return (

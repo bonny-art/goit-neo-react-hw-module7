@@ -9,7 +9,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { hasContact } from "../../utils/hasContact";
 import toast from "react-hot-toast";
 import { nanoid } from "nanoid";
-import { addContact } from "../../redux/contacts/contactsSlice";
+import { selectContacts } from "../../redux/contacts/contactsSlice";
+import { addContactThunk } from "../../redux/contacts/contactsOps";
 
 const SignupSchema = Yup.object().shape({
   name: Yup.string()
@@ -28,7 +29,7 @@ const initialValues = {
 };
 
 const ContactForm = () => {
-  const contacts = useSelector((state) => state.contacts.items);
+  const contacts = useSelector(selectContacts);
 
   const dispatch = useDispatch();
 
@@ -43,7 +44,7 @@ const ContactForm = () => {
       id: nanoid(),
     };
 
-    dispatch(addContact(newContact));
+    dispatch(addContactThunk(newContact));
     toast.success("Contact added!");
     actions.resetForm();
   };

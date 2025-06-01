@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { getContacts } from "../../api/mockapi";
+import { deleteContactById, getContacts, postContact } from "../../api/mockapi";
 
 export const fetchContactsThunk = createAsyncThunk(
   "contacts/fetchAll",
@@ -14,9 +14,9 @@ export const fetchContactsThunk = createAsyncThunk(
 
 export const addContactThunk = createAsyncThunk(
   "contacts/addContact",
-  async (id, { rejectWithValue }) => {
+  async (data, { rejectWithValue }) => {
     try {
-      return await getContacts(id);
+      return await postContact(data);
     } catch (error) {
       return rejectWithValue(error.message);
     }
@@ -27,7 +27,7 @@ export const deleteContactThunk = createAsyncThunk(
   "contacts/deleteContact",
   async (id, { rejectWithValue }) => {
     try {
-      return await getContacts(id);
+      return await deleteContactById(id);
     } catch (error) {
       return rejectWithValue(error.message);
     }
