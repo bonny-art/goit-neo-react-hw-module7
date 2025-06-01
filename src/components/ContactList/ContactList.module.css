@@ -1,0 +1,11 @@
+.loaderWrapper {
+  display: flex;
+  justify-content: center;
+
+  padding-top: 40px;
+}
+
+.error {
+  text-align: center;
+  font-weight: 500;
+}
