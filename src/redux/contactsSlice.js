@@ -4,8 +4,8 @@ import {
   deleteContactThunk,
   fetchContactsThunk,
 } from "./contactsOps";
-import { selectNameFilter } from "../filters/filtersSlice";
-import { getFilteredContacts } from "../../utils/getFilteredContacts";
+import { selectNameFilter } from "./filtersSlice";
+import { getFilteredContacts } from "../utils/getFilteredContacts";
 
 export const selectContacts = (state) => state.contacts.items;
 export const selectLoading = (state) => state.contacts.loading;

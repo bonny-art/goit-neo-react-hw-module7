@@ -1,10 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { FaTimes } from "react-icons/fa";
 import styles from "./SearchBox.module.css";
-import {
-  changeFilter,
-  selectNameFilter,
-} from "../../redux/filters/filtersSlice";
+import { changeFilter, selectNameFilter } from "../../redux/filtersSlice";
 
 const SearchBox = ({ children }) => {
   const query = useSelector(selectNameFilter);

@@ -5,7 +5,7 @@ import Button from "../Button/Button";
 
 import styles from "./Contact.module.css";
 import { useDispatch } from "react-redux";
-import { deleteContactThunk } from "../../redux/contacts/contactsOps";
+import { deleteContactThunk } from "../../redux/contactsOps";
 
 const Contact = ({ data }) => {
   const dispatch = useDispatch();

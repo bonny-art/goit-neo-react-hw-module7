@@ -6,7 +6,7 @@ import {
   selectError,
   selectFilteredContacts,
   selectLoading,
-} from "../../redux/contacts/contactsSlice";
+} from "../../redux/contactsSlice";
 
 import { BarLoader } from "react-spinners";
 import styles from "./ContactList.module.css";

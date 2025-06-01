@@ -8,8 +8,8 @@ import styles from "./ContactForm.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { hasContact } from "../../utils/hasContact";
 import toast from "react-hot-toast";
-import { selectContacts } from "../../redux/contacts/contactsSlice";
-import { addContactThunk } from "../../redux/contacts/contactsOps";
+import { selectContacts } from "../../redux/contactsSlice";
+import { addContactThunk } from "../../redux/contactsOps";
 
 const SignupSchema = Yup.object().shape({
   name: Yup.string()

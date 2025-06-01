@@ -5,7 +5,7 @@ import Container from "./components/Container/Container";
 import Section from "./components/Section/Section";
 import SearchBox from "./components/SearchBox/SearchBox";
 import ContactForm from "./components/ContactForm/ContactForm";
-import { fetchContactsThunk } from "./redux/contacts/contactsOps.js";
+import { fetchContactsThunk } from "./redux/contactsOps.js";
 
 import style from "./App.module.css";
 import { useDispatch } from "react-redux";
